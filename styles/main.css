@@ -1,0 +1,303 @@
+/* Colors used:
+
+    #071624 - body color
+    #030910 - footer color
+    #6984a4 - footer text color
+    #8ca1b4 - byline text color
+    #f2cf38 - button and link color
+*/
+
+/* ========================
+           basics
+   ======================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #071624;
+    font-size: 1.2rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin: 0;
+}
+
+@media screen and (max-width: 1000px) {
+
+    body {
+        font-size: 1rem;
+    }
+
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #fff;
+    font-family: 'Canela', serif;
+    margin: 0 0 .75em 0;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    margin: 0 0 1em 0;
+}
+
+/* ========================
+         reusable
+   ======================== */
+
+.width-limited {
+    max-width: 60em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+.fancy-button {
+    font-size: 1em;
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #f2cf38;
+    border: none;
+    border-radius: 2em;
+    padding: .5em 1em .6em;
+    box-shadow: 0 .25em .5em rgba(0, 0, 0, 0.35);
+}
+
+.fancy-button:hover,
+.fancy-button:focus {
+    background-color: #f9d846;
+    outline: none;
+}
+
+.fancy-button:active {
+    color: black;
+    background-color: #eac628;
+}
+
+/* cards */
+.cards {
+    display: grid;
+    /* auto-fit = fit as many columns as you can into the grid
+       minmax = each column is at least 15em wide and expands to fill the space */
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    grid-gap: 1em;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.card {
+    background-color: #122333;
+    border-radius: .3em;
+    box-shadow: 0 .25em .5em rgba(0, 0, 0, 0.25);
+    overflow: hidden; /* make sure image corners get rounded too */
+}
+
+.card img {
+    width: 100%;
+}
+
+.card-body {
+    padding: 1.2em 1.75em .5em;
+}
+
+.card h3 {
+    color: white;
+}
+
+.card p {
+    color: white;
+    font-size: .9em;
+}
+
+.card .byline {
+    color: #8ca1b4;
+    font-size: .8em;
+    margin-top: -1.25em;
+}
+
+/* ========================
+         navigation
+   ======================== */
+
+.navigation {
+    background: linear-gradient(rgba(0, 0, 0, .85), rgba(0, 0, 0, 0));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.navigation li + li {
+    margin-left: 1.5em;
+}
+
+/* make the first li (containing the logo) take up all the
+   remaining space, which pushes it to the left edge */
+.navigation li:first-of-type {
+    flex: 1;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+}
+
+.navigation a:hover,
+.navigation a:focus {
+    color: #f2cf38;
+}
+
+/* get rid of everything except logo when narrow */
+@media screen and (max-width: 600px) {
+
+    .navigation li:not(:first-of-type) {
+        display: none;
+    }
+
+}
+
+/* ========================
+            header
+   ======================== */
+
+header {
+    /* 1st background: linear gradient that fades to the color of the body
+       2nd background: header image underneath the gradient */
+    background-image: linear-gradient(to top, rgba(7, 22, 36, 1), rgba(7, 22, 36, .65) 5em, rgba(7, 22, 36, 0) 8em),  url('../images/header.jpg');
+    background-size: cover;
+    background-position: 50% 80%;
+}
+
+/* larger header@2x.jpg image for Retina screens */
+@media screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+    header {
+        background-image: linear-gradient(to top, rgba(7, 22, 36, 1), rgba(7, 22, 36, .65) 5em, rgba(7, 22, 36, 0) 8em),  url('../images/header@2x.jpg');
+    }
+
+}
+
+/* make the linear gradient cover the entire image so that the text is more readable */
+@media screen and (max-width: 45em) {
+
+    header {
+        background-image: linear-gradient(to top, rgba(7, 22, 36, 1), rgba(7, 22, 36, .2) 25%, rgba(7, 22, 36, .2) 75%, rgba(7, 22, 36, .75)),  url('../images/header.jpg');
+    }
+
+}
+
+/* make everything in the header both vertically and horizontally centered */
+.header-container {
+    height: 37em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+header h1 {
+    font-size: 3.5em;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: 0 .05em .25em black;
+    margin: 0;
+}
+
+.trip-planner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.25em;
+    width: 40em;
+    position: relative;
+
+    color: black;
+    background-color: #fff;
+    border-radius: .5em;
+    margin: 1em auto 0;
+    padding: 1em 2em 2em;
+    box-shadow: 0 .25em 1.5em rgba(0, 0, 0, 0.75);
+}
+
+.trip-planner label {
+    font-weight: bold;
+}
+
+.trip-planner input {
+    width: 100%;
+    margin-top: .5em;
+    padding: 1em .75em;
+
+    font-size: 1em;
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-overflow: ellipsis;
+    border: 1px solid #ccc;
+    border-radius: .35em;
+}
+
+.trip-planner input:focus {
+    border-color: #888;
+    outline: none;
+}
+
+.trip-search {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%); /* move button by half its own width to properly center it */
+}
+
+/* ========================
+        destinations
+   ======================== */
+
+.destinations {
+    margin-top: -2em;
+}
+
+.destinations h2 {
+    margin-left: 1em;
+}
+
+.destinations h3 {
+    font-weight: normal;
+}
+
+.destinations button {
+    display: block;
+    margin: 1em auto 0;
+}
+
+/* ========================
+           footer
+   ======================== */
+
+footer {
+    color: #6984a4;
+    background-color: #030910;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}

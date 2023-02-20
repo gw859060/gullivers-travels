@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Gulliver's Travels – Book flights, hotels, vacations, and more</title>
+    <!-- this needs to be preloaded first, otherwise canvas uses the default font -->
+    <link rel="preload" href="fonts/Canela-Black.otf" as="font" type="font/otf" crossorigin>
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <nav class="navigation">
+        <ul class="width-limited">
+            <li><a href="#"><canvas id="gulliver-logo" width="250" height="40"></canvas></a></li>
+            <li><a href="#">Flights</a></li>
+            <li><a href="#">Cruises</a></li>
+            <li><a href="#">Guides</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div class="header-container width-limited">
+            <h1>Book your next voyage here.</h1>
+            <div class="trip-planner">
+                <div>
+                    <label for="trip-origin">From</label>
+                    <input type="text" name="trip-origin" placeholder="Philadelphia, New York, Boston...">
+                </div>
+                <div>
+                    <label for="trip-destination">To</label>
+                    <input type="text" name="trip-destination" placeholder="Lilliput, Brobdingnag, Glubdubdrib...">
+                </div>
+                <button class="fancy-button trip-search" type="button" name="search-button">Search</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="destinations width-limited">
+            <h2>Popular destinations</h2>
+            <ul class="cards">
+                <li class="card">
+                    <img src="images/nyc.jpg" srcset="images/nyc@2x.jpg 2x" alt="">
+                    <div class="card-body">
+                        <h3>New York City</h3>
+                        <p class="byline">United States • Starting from $100</p>
+                        <p>The Big Apple, the most populous city in the United States</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="images/london.jpg" srcset="images/london@2x.jpg 2x" alt="">
+                    <div class="card-body">
+                        <h3>Cambridge</h3>
+                        <p class="byline">England • Starting from $900</p>
+                        <p>A college town close to London, home to the University of Cambridge</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="images/shanghai.jpg" srcset="images/shanghai@2x.jpg 2x" alt="">
+                    <div class="card-body">
+                        <h3>Shanghai</h3>
+                        <p class="byline">China • Starting from $1,500</p>
+                        <p>Global center for finance, innovation, and transportation</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="images/maspalomas.jpg" srcset="images/maspalomas@2x.jpg 2x" alt="">
+                    <div class="card-body">
+                        <h3>Maspalomas</h3>
+                        <p class="byline">Canary Islands • Starting from $1,000</p>
+                        <p>A coastal resort town on the Spanish island of Gran Canaria</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="images/hoi-an.jpg" srcset="images/hoi-an@2x.jpg 2x" alt="">
+                    <div class="card-body">
+                        <h3>Hoi An</h3>
+                        <p class="byline">Vietnam • Starting from $1,250</p>
+                        <p>A World Heritage Site that blends Vietnamese and foreign influences</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <img src="images/siem-reap.jpg" srcset="images/siem-reap@2x.jpg 2x" alt="">
+                    <div class="card-body">
+                        <h3>Siem Reap</h3>
+                        <p class="byline">Cambodia • Starting from $1,250</p>
+                        <p>Colonial city known for the Angkor temples and its vibrant street life</p>
+                    </div>
+                </li>
+            </ul>
+            <button class="fancy-button" type="button" name="button">See more</button>
+        </section>
+    </main>
+    <footer>
+        <div class="width-limited">© 2021 Garrett Wei for CSW 315.</div>
+    </footer>
+    <script type="text/javascript" src="scripts/main.js"></script>
+</body>
+
+</html>
